@@ -3,7 +3,7 @@
 pip install numpy==1.21.5
 pip install pandas==1.4.2
 pip install Pillow==9.0.1
-pip install dlib==19.24.0
+#pip install dlib==19.24.0
 pip install imageio==2.9.0
 pip install imgaug==0.4.0
 pip install tqdm==4.61.0
