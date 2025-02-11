@@ -41,6 +41,7 @@ parser.add_argument('--detector_path', type=str,
                     default='/home/zhiyuanyan/DeepfakeBench/training/config/detector/resnet34.yaml',
                     help='path to detector YAML file')
 parser.add_argument("--test_dataset", nargs="+")
+parser.add_argument("--excel_file_path", type=str)
 parser.add_argument('--weights_path', type=str, 
                     default='/mntcephfs/lab_data/zhiyuanyan/benchmark_results/auc_draw/cnn_aug/resnet34_2023-05-20-16-57-22/test/FaceForensics++/ckpt_epoch_9_best.pth')
 #parser.add_argument("--lmdb", action='store_true', default=False)
@@ -162,6 +163,8 @@ def main():
     # If arguments are provided, they will overwrite the yaml settings
     if args.test_dataset:
         config['test_dataset'] = args.test_dataset
+    if args.excel_file_path:
+       config['excel_file_path'] = args.excel_file_path
     if args.weights_path:
         config['weights_path'] = args.weights_path
         weights_path = args.weights_path
