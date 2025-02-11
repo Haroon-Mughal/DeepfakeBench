@@ -3,6 +3,7 @@ eval pretained model.
 """
 import os
 import numpy as np
+import pandas as pd
 from os.path import join
 import cv2
 import random
@@ -131,13 +132,16 @@ def test_epoch(model, test_data_loaders):
         metric_one_dataset = get_test_metrics(y_pred=predictions_nps, y_true=label_nps,
                                               img_names=data_dict['image'])
         metrics_all_datasets[key] = metric_one_dataset
-        
+
+        # save labels and prediction prob in a dataframe to be saved as excel file later
+        df = pd.DataFrame({'Predicted_Probabilities': predictions_nps,'Labels': label_nps})
+      
         # info for each dataset
         tqdm.write(f"dataset: {key}")
         for k, v in metric_one_dataset.items():
             tqdm.write(f"{k}: {v}")
 
-    return metrics_all_datasets
+    return metrics_all_datasets, df
 
 @torch.no_grad()
 def inference(model, data_dict):
@@ -188,7 +192,10 @@ def main():
         print('Fail to load the pre-trained weights')
     
     # start testing
-    best_metric = test_epoch(model, test_data_loaders)
+    best_metric, df = test_epoch(model, test_data_loaders)
+
+    # save excel file on a path taken from config file
+    df.to_excel(config['excel_file_path'], index=False)
     print('===> Test Done!')
 
 if __name__ == '__main__':
