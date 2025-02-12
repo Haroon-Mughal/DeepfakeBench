@@ -1,8 +1,8 @@
 mode: test
 lmdb: True
-rgb_dir: './datasets/rgb'
+rgb_dir: '/content/drive/MyDrive/Deep Fake Detection Project/datasets'
 lmdb_dir:  './datasets/lmdb'
-dataset_json_folder: './preprocessing/dataset_json'
+dataset_json_folder: '/content/drive/MyDrive/Deep Fake Detection Project/dataset_json'
 label_dict:
   # DFD
   DFD_fake: 1
