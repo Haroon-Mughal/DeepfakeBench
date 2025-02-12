@@ -197,9 +197,11 @@ def main():
     # start testing
     best_metric, df = test_epoch(model, test_data_loaders)
 
+    detector_name = model_class
+    excel_file_name = f"results_{detector_name}_{config['test_dataset']}_test.xlsx"
     # save excel file on a path taken from config file
-    df.to_excel(config['excel_file_path'], index=False)
-    print('===> Test Done!')
+    df.to_excel(os.path.join(config['excel_file_path'], excel_file_name), index=False)
+    print('===> Test Done! ')
 
 if __name__ == '__main__':
     main()
