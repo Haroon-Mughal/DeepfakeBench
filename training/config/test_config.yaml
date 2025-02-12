@@ -1,5 +1,5 @@
 mode: test
-lmdb: True
+lmdb: False
 rgb_dir: '/content/drive/MyDrive/Deep Fake Detection Project/datasets'
 lmdb_dir:  './datasets/lmdb'
 dataset_json_folder: '/content/drive/MyDrive/Deep Fake Detection Project/dataset_json'
