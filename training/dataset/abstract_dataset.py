@@ -297,6 +297,7 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
         if not self.lmdb:
             if not file_path[0] == '.':
                 #file_path =  f'./{self.config["rgb_dir"]}\\'+file_path
+                file_path = file_path
             assert os.path.exists(file_path), f"{file_path} does not exist"
             img = cv2.imread(file_path)
             if img is None:
@@ -334,6 +335,7 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
         if not self.lmdb:
             if not file_path[0] == '.':
                 #file_path =  f'./{self.config["rgb_dir"]}\\'+file_path
+                file_path = file_path
             if os.path.exists(file_path):
                 mask = cv2.imread(file_path, 0)
                 if mask is None:
@@ -375,6 +377,7 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
         if not self.lmdb:
             if not file_path[0] == '.':
                 #file_path =  f'./{self.config["rgb_dir"]}\\'+file_path
+                file_path = file_path
             if os.path.exists(file_path):
                 landmark = np.load(file_path)
             else:
