@@ -24,7 +24,7 @@ rearrange:
     default: 'Celeb-DF-v2'
   dataset_root_path: # the root path to the dataset
     type: str
-    default: '/content/drive/MyDrive/Deep Fake Detection Project/Celeb-DF-v2'
+    default: '/content/drive/MyDrive/Deep Fake Detection Project/datasets'
   output_file_path: # the json path to the dataset
     type: str
     default: '/content/drive/MyDrive/Deep Fake Detection Project/dataset_jason'
