@@ -21,10 +21,10 @@ preprocess:
 rearrange:
   dataset_name: # the name of dataset
     choices: ['FaceForensics++', 'DeepFakeDetection', 'Celeb-DF-v1', 'Celeb-DF-v2','DFDCP', 'DFDC', 'DeeperForensics-1.0','UADFV','FaceShifter']
-    default: 'UADFV'
+    default: 'Celeb-DF-v2'
   dataset_root_path: # the root path to the dataset
     type: str
-    default: '/content/drive/MyDrive/Deep Fake Detection Project/datasets'
+    default: '/content/DeepfakeBench/datasets'
   output_file_path: # the json path to the dataset
     type: str
     default: '/content/drive/MyDrive/Deep Fake Detection Project/dataset_json'
