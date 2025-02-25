@@ -17,7 +17,7 @@ pip install scikit-learn==1.0.2
 pip install albumentations==1.1.0
 pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install efficientnet-pytorch==0.7.1
-pip install timm==0.6.12
+pip install timm==0.9.2
 pip install segmentation-models-pytorch==0.3.2
 pip install torchtoolbox==0.1.8.2
 pip install tensorboard==2.10.1
@@ -31,3 +31,4 @@ pip install kornia
 pip install fvcore
 pip install imgaug==0.4.0
 pip install git+https://github.com/openai/CLIP.git
+pip install protobuf==3.20.3
